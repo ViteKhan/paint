@@ -11,7 +11,8 @@ export const useMenuActions = () => {
     if (dataUrl) {
       const link = document.createElement('a');
       link.href = dataUrl;
-      link.download = `${dataUrl}.jpg`;
+      // eslint-disable-next-line
+      link.download = `${+new Date}.jpg`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
