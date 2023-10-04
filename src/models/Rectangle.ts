@@ -2,7 +2,7 @@ import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../constants';
 import { TCanvas } from '../types';
 import Tool from './Tool';
 
-export default class Rect extends Tool {
+export default class Rectangle extends Tool {
   startX = 0;
   startY = 0;
   saved: string | undefined;
