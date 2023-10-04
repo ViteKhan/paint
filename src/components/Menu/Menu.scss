@@ -1,5 +1,8 @@
 @import 'src/styles/mixins';
+@import 'src/styles/variables';
 
 .menu {
   @include panel;
+  box-shadow: none;
+  border-bottom: 1px solid $GRAY;
 }
