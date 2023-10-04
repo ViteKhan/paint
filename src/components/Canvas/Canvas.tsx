@@ -3,8 +3,8 @@ import { observer } from 'mobx-react-lite';
 import { useEffect, useRef } from 'react';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../../constants';
 import Pencil from '../../models/Pencil';
-import canvasStore from '../../stores/CanvasStore';
-import toolStore from '../../stores/ToolStore';
+import { canvasStore } from '../../stores/CanvasStore';
+import { toolStore } from '../../stores/ToolStore';
 import { TCanvas } from '../../types';
 
 export const Canvas = () => {

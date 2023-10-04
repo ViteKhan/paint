@@ -2,8 +2,8 @@ import './Toolbar.scss';
 import { observer } from 'mobx-react-lite';
 import { ChangeEvent } from 'react';
 import { TOOLS } from '../../constants';
-import canvasStore from '../../stores/CanvasStore';
-import toolStore from '../../stores/ToolStore';
+import { canvasStore } from '../../stores/CanvasStore';
+import { toolStore } from '../../stores/ToolStore';
 import { Button } from '../Button';
 import { ColorPicker } from '../ColorPicker';
 

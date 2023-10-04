@@ -19,6 +19,18 @@ class CanvasStore {
     this.undoList.push(data);
   };
 
+  pushToRedoList = (data: string) => {
+    this.redoList.push(data);
+  };
+
+  clear = () => {
+    const ctx = this.canvas?.getContext('2d');
+    const canvasWidth = this.canvas?.width || CANVAS_WIDTH;
+    const canvasHeight = this.canvas?.height || CANVAS_HEIGHT;
+    this.pushToUndoList(this.canvas?.toDataURL()!);
+    ctx?.clearRect(0, 0, canvasWidth, canvasHeight);
+  };
+
   undo = () => {
     const ctx = this.canvas?.getContext('2d');
     const canvasWidth = this.canvas?.width || CANVAS_WIDTH;
@@ -26,7 +38,7 @@ class CanvasStore {
 
     if (this.undoList.length) {
       const dataUrl = this.undoList.pop();
-      this.redoList.push(this.canvas?.toDataURL()!);
+      this.pushToRedoList(this.canvas?.toDataURL()!);
       const image = new Image();
 
       if (dataUrl) {
@@ -49,7 +61,7 @@ class CanvasStore {
 
     if (this.redoList.length) {
       const dataUrl = this.redoList.pop();
-      this.undoList.push(this.canvas?.toDataURL()!);
+      this.pushToUndoList(this.canvas?.toDataURL()!);
       const image = new Image();
 
       if (dataUrl) {
@@ -63,4 +75,5 @@ class CanvasStore {
   };
 }
 
-export default new CanvasStore();
+const canvasStore = new CanvasStore();
+export { canvasStore };

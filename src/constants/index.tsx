@@ -11,7 +11,8 @@ import { ReactComponent as EraserIcon } from '../assets/icons/eraser.svg';
 import { ReactComponent as UndoIcon } from '../assets/icons/undo.svg';
 import { ReactComponent as RedoIcon } from '../assets/icons/redo.svg';
 import { ReactComponent as SaveIcon } from '../assets/icons/save.svg';
-import canvasStore from '../stores/CanvasStore';
+import { ReactComponent as TrashIcon } from '../assets/icons/trash.svg';
+import { canvasStore } from '../stores/CanvasStore';
 
 export const CANVAS_WIDTH = 700;
 export const CANVAS_HEIGHT = 500;
@@ -28,4 +29,5 @@ export const MENU_ACTIONS = [
   { onClick: () => canvasStore.undo(), title: 'Undo', icon: <UndoIcon/> },
   { onClick: () => canvasStore.redo(), title: 'Redo', icon: <RedoIcon/> },
   { onClick: () => alert('Saved'), title: 'Save', icon: <SaveIcon/> },
+  { onClick: () => canvasStore.clear(), title: 'Clear', icon: <TrashIcon/> },
 ];

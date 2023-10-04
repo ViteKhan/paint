@@ -26,4 +26,5 @@ class ToolStore {
   };
 }
 
-export default new ToolStore();
+const toolStore = new ToolStore();
+export { toolStore };
