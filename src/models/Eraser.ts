@@ -4,6 +4,7 @@ import Pencil from './Pencil';
 export default class Eraser extends Pencil {
   constructor(canvas: TCanvas) {
     super(canvas);
+    this.ctx!.globalCompositeOperation = 'destination-out';
   };
 
   draw = (x: number, y: number) => {

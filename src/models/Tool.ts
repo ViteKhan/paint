@@ -8,6 +8,7 @@ export default class Tool {
   constructor(canvas: TCanvas) {
     this.canvas = canvas;
     this.ctx = canvas ? canvas.getContext('2d') : null;
+    this.ctx!.globalCompositeOperation = 'source-over';
     this.destroyEvents();
   };
 
