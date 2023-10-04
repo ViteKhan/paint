@@ -1,0 +1,12 @@
+.btn {
+  height: 25px;
+  width: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  scale: 1.3;
+}
