@@ -22,6 +22,10 @@ export const Toolbar = () => {
     toolStore.setStrokeColor(e.target.value);
   };
 
+  const onChangeLineWidth = (e: ChangeEvent<HTMLInputElement>) => {
+    toolStore.setLineWidth(+e.target.value);
+  };
+
   return (
     <div className="toolbar">
       {TOOLS.map(tool => (
@@ -50,6 +54,15 @@ export const Toolbar = () => {
         active={active === TITLES.STROKE_COLOR}
         onChange={onChangeStrokeColor}
         icon={<PaletteIcon/>}
+      />
+      <label htmlFor="line-width">Line width</label>
+      <input
+        id="line-width"
+        type="number"
+        onChange={onChangeLineWidth}
+        defaultValue={1}
+        min={1}
+        max={50}
       />
     </div>
   );
