@@ -16,16 +16,17 @@ export const ColorPicker: FC<ColorPickerProps> = ({ id, icon, title, ...inputPro
   };
 
   return (
-    <div>
-      <input
-        className="hidden"
-        type="color"
-        ref={inputRef}
-        {...inputProps}
-      />
+    <div className="container">
       <Button onClick={handleButtonClick} title={title}>
         {icon}
       </Button>
+      <div className="colorPicker">
+        <input
+          type="color"
+          ref={inputRef}
+          {...inputProps}
+        />
+      </div>
     </div>
   );
 };
