@@ -6,8 +6,10 @@ import { Toolbar } from '../Toolbar';
 export const Paint = () => {
   return (
     <div className="paint">
-      <Menu/>
-      <Toolbar/>
+      <div className="panel">
+        <Menu/>
+        <Toolbar/>
+      </div>
       <Canvas/>
     </div>
   );
