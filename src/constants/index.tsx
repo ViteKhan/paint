@@ -8,6 +8,10 @@ import { ReactComponent as LineIcon } from '../assets/icons/line.svg';
 import { ReactComponent as RectangleIcon } from '../assets/icons/rectangle.svg';
 import { ReactComponent as CircleIcon } from '../assets/icons/circle.svg';
 import { ReactComponent as EraserIcon } from '../assets/icons/eraser.svg';
+import { ReactComponent as UndoIcon } from '../assets/icons/undo.svg';
+import { ReactComponent as RedoIcon } from '../assets/icons/redo.svg';
+import { ReactComponent as SaveIcon } from '../assets/icons/save.svg';
+import canvasStore from '../stores/CanvasStore';
 
 export const CANVAS_WIDTH = 700;
 export const CANVAS_HEIGHT = 500;
@@ -18,4 +22,10 @@ export const TOOLS = [
   { Class: Rectangle, title: 'Rectangle', icon: <RectangleIcon/> },
   { Class: Circle, title: 'Circle', icon: <CircleIcon/> },
   { Class: Eraser, title: 'Eraser', icon: <EraserIcon/> },
+];
+
+export const MENU_ACTIONS = [
+  { onClick: () => canvasStore.undo(), title: 'Undo', icon: <UndoIcon/> },
+  { onClick: () => canvasStore.redo(), title: 'Redo', icon: <RedoIcon/> },
+  { onClick: () => alert('Saved'), title: 'Save', icon: <SaveIcon/> },
 ];
