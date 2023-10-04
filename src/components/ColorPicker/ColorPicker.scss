@@ -1,14 +1,9 @@
-@import 'src/styles/variables';
-
-.InputColor {
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.InputColor:hover {
-  scale: 1.3;
-}
-
-label {
-  color: $BLUE;
+.hidden {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  line-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }

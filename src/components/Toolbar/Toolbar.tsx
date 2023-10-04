@@ -6,6 +6,8 @@ import { canvasStore } from '../../stores/CanvasStore';
 import { toolStore } from '../../stores/ToolStore';
 import { Button } from '../Button';
 import { ColorPicker } from '../ColorPicker';
+import { ReactComponent as PaletteIcon } from '../../assets/icons/palette.svg';
+import { ReactComponent as FillIcon } from '../../assets/icons/fill.svg';
 
 export const Toolbar = () => {
   const onChangeFillColor = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,8 +30,16 @@ export const Toolbar = () => {
           {tool.icon}
         </Button>
       ))}
-      <ColorPicker id="fill-color" label="Fill color" onChange={onChangeFillColor}/>
-      <ColorPicker id="stroke-color" label="Stroke color" onChange={onChangeStrokeColor}/>
+      <ColorPicker
+        title="Fill color"
+        onChange={onChangeFillColor}
+        icon={<FillIcon/>}
+      />
+      <ColorPicker
+        title="Stroke color"
+        onChange={onChangeStrokeColor}
+        icon={<PaletteIcon/>}
+      />
     </div>
   );
 };
