@@ -9,8 +9,6 @@ class ToolStore {
 
   setTool = (tool: Tool | null) => {
     this.tool = tool;
-    this.tool!.fillColor = 'white';
-    this.tool!.strokeColor = 'black';
   };
 
   setFillColor = (color: string) => {
